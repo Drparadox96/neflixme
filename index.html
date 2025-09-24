@@ -1,36 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watch Hot Video</title>
-  <script>
-    function showUnlock() {
-      document.getElementById("unlockBtn").classList.remove("hidden");
-    }
-    function unlockVideo() {
-      document.getElementById("lockSection").classList.add("hidden");
-      document.getElementById("videoSection").classList.remove("hidden");
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Do you want to know Jesus more?</title>
+  <style>
+    :root{--bg:#0b1020;--card:#ffffff;--accent:#0b63e5}
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(180deg, rgba(11,16,32,1) 0%, rgba(11,16,32,0.85) 60%), #0b1020;color:#111}
+    .card{max-width:960px;width:100%;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.6);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:grid;grid-template-columns:1fr 420px}
+    .left{padding:36px 40px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+    h1{margin:0;color:#fff;font-size:clamp(20px,4vw,30px)}
+    p.lead{margin:0;color:rgba(255,255,255,0.85);line-height:1.45}
+    .buttons{display:flex;gap:12px;margin-top:12px}
+    .btn{padding:12px 18px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+    .yes{background:var(--accent);color:white}
+    .no{background:transparent;color:#cbd5e1;border:1px solid rgba(255,255,255,0.06)}
+    .right{position:relative;background:#111;display:flex;align-items:center;justify-content:center}
+    .right img{width:100%;height:100%;object-fit:cover;display:block}
+    .attribution{font-size:12px;color:rgba(255,255,255,0.6);margin-top:8px}
+    @media (max-width:880px){.card{grid-template-columns:1fr;}.right{height:260px}.left{padding:24px}}
+  </style>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
-  <div class="max-w-xl w-full bg-white p-6 rounded-2xl shadow-lg text-center">
-    <!-- Locked Section -->
-    <div id="lockSection">
-      <img src="preview1.PNG" alt="Video Thumbnail" class="w-full rounded-xl shadow mb-4">
-      <p class="mb-4 text-gray-700 text-lg font-semibold">Join Telegram channel to watch</p>
-      
-      <!-- Join button -->
-      <a href="https://t.me/+y2DZCJ5SsoNlZDdi" target="_blank" onclick="showUnlock()"
-         class="block w-full bg-blue-500 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 mb-3">
-         Join Telegram
-      </a>
+<body>
+  <div class="wrap">
+    <main class="card" role="main">
+      <section class="left">
+        <h1>Do you want to know Jesus more?</h1>
+        <p class="lead">If you're curious, welcome — we share daily devotionals, short reflections, and encouragement to help you grow in faith. Click <strong>Yes</strong> to join our Telegram channel and get short, daily messages.</p>
 
-     
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ECDYTVN2Y"></script>
+        <div class="buttons">
+          <button class="btn yes" id="yesBtn" aria-label="Yes - join Telegram">Yes — take me there</button>
+          <button class="btn no" id="noBtn" aria-label="No - maybe later">No thanks</button>
+        </div>
+
+        <p class="attribution">Channel: <a href="https://t.me/dailydevotional247" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">@dailydevotional247</a></p>
+      </section>
+
+      <aside class="right" aria-hidden="false">
+        <img src="image.jpg" alt="Artistic depiction of Christ" />
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    const yes = document.getElementById('yesBtn');
+    const no = document.getElementById('noBtn');
+    yes.addEventListener('click', ()=>{
+      // open telegram link in a new tab for better UX
+      window.open('https://t.me/dailydevotional247','_blank');
+      // optional: also redirect current page (commented out)
+      // window.location.href = 'https://t.me/dailydevotional247';
+    });
+    no.addEventListener('click', ()=>{
+      // gentle fallback for "no" — show a polite message
+      alert('No problem — you can join anytime. God bless!');
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ECDYTVN2Y"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
