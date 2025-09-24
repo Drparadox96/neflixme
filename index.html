@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Hot Video</title>
+  <script>
+    function showUnlock() {
+      document.getElementById("unlockBtn").classList.remove("hidden");
+    }
+    function unlockVideo() {
+      document.getElementById("lockSection").classList.add("hidden");
+      document.getElementById("videoSection").classList.remove("hidden");
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="max-w-xl w-full bg-white p-6 rounded-2xl shadow-lg text-center">
+    <!-- Locked Section -->
+    <div id="lockSection">
+      <img src="preview1.PNG" alt="Video Thumbnail" class="w-full rounded-xl shadow mb-4">
+      <p class="mb-4 text-gray-700 text-lg font-semibold">Join Telegram channel to watch</p>
+      
+      <!-- Join button -->
+      <a href="https://t.me/+y2DZCJ5SsoNlZDdi" target="_blank" onclick="showUnlock()"
+         class="block w-full bg-blue-500 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 mb-3">
+         Join Telegram
+      </a>
+
+     
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ECDYTVN2Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2ECDYTVN2Y');
+</script>
+</body>
+</html>
